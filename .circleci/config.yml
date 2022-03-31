@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  sfdx: circleci/salesforce-sfdx@<<pipeline.parameters.dev-orb-version>>
+  sfdx: agentfrench/salesforce-sfdx@<<pipeline.parameters.dev-orb-version>>
   orb-tools: circleci/orb-tools@9.0
 
 parameters:
@@ -10,7 +10,7 @@ parameters:
     default: false
   dev-orb-version:
     type: string
-    default: "dev:alpha"
+    default: "dev:first"
 
 jobs:
   integration-install_cli_tar:
@@ -80,7 +80,7 @@ workflows:
       # store CIRCLE_TOKEN as a project env var or Contexts resource
       # if using Contexts, add your context below
       - orb-tools/publish-dev:
-          orb-name: circleci/salesforce-sfdx
+          orb-name: agentfrench/salesforce-sfdx
           context: orb-publisher
           requires:
             - orb-tools/pack
@@ -117,7 +117,7 @@ workflows:
       # be skipped.
       # e.g. [semver:patch] will cause a patch version to be published.
       - orb-tools/dev-promote-prod-from-commit-subject:
-          orb-name: circleci/salesforce-sfdx
+          orb-name: agentfrench/salesforce-sfdx
           context: orb-publisher
           add-pr-comment: true
           bot-token-variable: GHI_TOKEN

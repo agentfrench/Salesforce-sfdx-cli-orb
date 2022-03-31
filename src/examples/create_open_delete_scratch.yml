@@ -3,7 +3,7 @@ description: >
 usage:
   version: 2.1
   orbs:
-    sfdx: circleci/salesforce-sfdx@x.y
+    sfdx: agentfrench/salesforce-sfdx@x.y
   jobs:
     create-open-delete:
       executor: sfdx/default

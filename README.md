@@ -29,7 +29,7 @@ The consumer key of the connected app for salesforce
 ```
 version: 2.1
   orbs:
-    sfdx: circleci/salesforce-sfdx@x.y
+    sfdx: agentfrench/salesforce-sfdx@x.y
   jobs:
     install_authenticate:
       executor: sfdx/default
